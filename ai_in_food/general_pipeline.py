@@ -1,8 +1,12 @@
 import subprocess
 
 command_list = [
-    'python src/data/read_human_processed_information.py',
-    'python src/data/food_information_to_dataset.py',
+    'python src/data/get_data.py',
+    'python src/features/build_features.py',
+    'python src/models/prepare_data.py',
+    'python src/models/train_test_split.py',
+    'python src/models/train_model.py',
+    'python src/visualization/evaluate_model.py',
 ]
 
 for command in command_list:
