@@ -1,7 +1,9 @@
-import pandas as pd
-import unidecode
-import pickle
+import dotenv
+import json
 import os
+import pandas as pd
+import pickle
+import unidecode
 
 
 def get_general_path():
@@ -20,12 +22,21 @@ def join_paths(*p1):
     return os.path.join(*p1)
 
 
+def make_desired_folder(data_file_path):
+    general_path = get_general_path()
+    file_path = join_paths(general_path, data_file_path)
+    exists = check_if_filepath_exists(file_path)
+    if not exists:
+        os.makedirs(file_path)
+    return None
+
+
 def read_data(path, **additional_kwargs):
     """
     Helper function to read data
     """
     if path.endswith('.csv'):
-        data = pd.read_csv(path, **additional_kwargs)
+        data = pd.read_csv(path, index_col=0, **additional_kwargs)
     elif path.endswith('.parquet'):
         data = pd.read_parquet(path)
     elif path.endswith('.xlsx'):
@@ -76,6 +87,38 @@ def save_as_pickle(what, where):
         pickle.dump(what, file)
 
 
+def save_as_json(what, where):
+    with open(where, 'w') as f:
+        json.dump(what, f)
+
+
+def read_json_file(where):
+    with open(where, 'r') as f:
+        json_file = json.loads(f.read())
+    return json_file
+
+
+def save_as_csv(what, where):
+    what.to_csv(where)
+
+
+def save_as_parquet(what, where):
+    what.to_parquet(where)
+
+
+def concat_dataframes_from_list(list_of_dataframes):
+    concatenated_df = pd.concat(list_of_dataframes)
+    return concatenated_df
+
+
+def read_pickle_with_pandas(where):
+    """
+    Helper function to read a file in the path `where` with pandas.
+    """
+    file = pd.read_pickle(where)
+    return file
+
+
 def get_response_dataframe_from_dict_with_categs(
     dict_w_categs, not_consider_key=None
 ):
@@ -98,3 +141,15 @@ def get_response_dataframe_from_dict_with_categs(
             response_dataframes.append(response_df)
     response = pd.concat(response_dataframes).drop_duplicates()
     return response
+
+
+def check_if_filepath_exists(filepath):
+    """Check if the corresponding path exists."""
+    exists = os.path.exists(filepath)
+    return exists
+
+
+def load_api_keys():
+    general_path = get_general_path()
+    dotenv_path = join_paths(general_path, ".env")
+    dotenv.load_dotenv(dotenv_path)

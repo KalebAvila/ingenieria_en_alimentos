@@ -1,9 +1,0 @@
-El script para obtener los conjuntos de datos relevantes es get_data.py
-
-El conjunto base que se va a utilizar es el de flavorDB.
-
-El conjunto generado por el API de edamam depende de flavorDB.
-Por lo que se requiere forzosamente obtener el conjunto de FlavorDB.
-Posteriormente el de Edamam.
-
-El conjunto de datos de la usda es independiente a flavorDB.
