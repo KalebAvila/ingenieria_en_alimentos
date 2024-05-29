@@ -4,6 +4,7 @@ from src.data.utils import (
     read_pickle_with_pandas,
 )
 
+non_predictor_columns = ['similar']
 MODELS_PATH = "models"
 
 
