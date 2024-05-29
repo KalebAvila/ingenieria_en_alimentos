@@ -51,9 +51,8 @@ def plot_proportion_of_similarity_in_bins(y_true, y_pred, fig_name):
     fig_path = join_paths(general_path, FIGURES_PATH, fig_name)
     steps = 25
     results = pd.DataFrame()
-    results['pred'] = y_pred
     results['similar'] = y_true
-
+    results['pred'] = y_pred
     results['bins'] = pd.cut(results.pred, bins=np.linspace(0, 1, steps))
     fig, ax = plt.subplots(figsize=(10, 5))
     results.groupby("bins").similar.mean().plot(
