@@ -5,6 +5,7 @@ from src.data.utils import (
 )
 
 non_predictor_columns = ['similar']
+id_columns = ['fdc_id_source', 'fdc_id_target']
 MODELS_PATH = "models"
 
 
