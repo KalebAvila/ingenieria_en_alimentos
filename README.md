@@ -7,11 +7,11 @@ Favor de abrir la carpeta `ai_in_food` para ver el contenido.
 ¿Qué encontrarás?
 ----------------
 1. El código correspondiente para entrenar el modelo.
-![code.png](./ai_in_food/reports/figures/general_figures/code.png)
+![code.png](./ai_in_food/reports/figures/general_figures/code.PNG)
 
 2. Una demo del modelo siendo utilizado para realizar comparaciones del modelo.
 
-![demo.png](./ai_in_food/reports/figures/general_figures/demo.png)
+![demo.png](./ai_in_food/reports/figures/general_figures/demo.PNG)
 
 3. Algunos resultados que se han obtenido a lo largo del proyecto. 
 
