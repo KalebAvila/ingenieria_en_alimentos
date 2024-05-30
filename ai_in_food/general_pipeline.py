@@ -7,6 +7,7 @@ command_list = [
     'python src/models/train_test_split.py',
     'python src/models/train_model.py',
     'python src/visualization/evaluate_model.py',
+    'python src/demo/app.py'
 ]
 
 for command in command_list:

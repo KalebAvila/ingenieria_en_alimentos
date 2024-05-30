@@ -21,9 +21,9 @@ sostenibilidad y accesibilidad en la industria alimentaria.
 
 ¿Cómo ejecutar el código correctamente?
 --------
-1. Crea un nuevo ambiente virtual y activalo (puedes usar el comando `python -m venv venv`).
+1. Crea un nuevo ambiente virtual (puedes usar el comando `python -m venv venv`) y activalo (`source venv/bin/activate`).
 2. Instala las dependencias correspondientes: `pip install -r requirements.txt`. 
-3. Ejecuta con python el siguiente script the python `general_pipeline.py` python script. Este script contiene el orden correcto de ejecución.
+3. Ejecuta con python el siguiente script the python `general_pipeline.py` python script. Este script contiene el orden correcto de ejecución para descargar los datos, procesarlos y finalmente crear un modelo.
 
 Importante: Para la ejecución total del flujo se requiere una API key de Edamam, la cual se coloca en un archivo `.env`.  
 
@@ -55,7 +55,9 @@ Organización del proyecto:
     ├── src                  <- Source code for use in this project.
     │   ├── __init__.py      <- Makes src a Python module
     │   │
-    │   ├── data           <- Scripts to download the data. 
+    │   ├── data           <- Scripts to download the data.
+    │   │
+    │   ├── demo           <- Scripts to execute the demo.
     │   │
     │   ├── features       <- Scripts to turn raw data into features for modeling.
     │   │
