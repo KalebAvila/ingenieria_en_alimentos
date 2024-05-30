@@ -1,6 +1,6 @@
 import pandas as pd
 
-from feature_utils import (
+from src.features.feature_utils import (
     stem_list,
     process_base_ingredients,
     get_dim_reduction_from_simplification,
@@ -9,7 +9,7 @@ from feature_utils import (
     RANDOM_SEED,
 )
 
-from feature_information import categs_dict, flavor_df_columns_defined
+from src.features.feature_information import categs_dict, flavor_df_columns_defined
 
 from src.data.utils import (
     get_general_path,
