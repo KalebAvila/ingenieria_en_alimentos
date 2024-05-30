@@ -7,16 +7,13 @@ Favor de abrir la carpeta `ai_in_food` para ver el contenido.
 ¿Qué encontrarás?
 ----------------
 
-
-1. Una demo del modelo siendo utilizado para realizar comparaciones del modelo.
+1. Una demo del modelo siendo utilizado para realizar comparaciones de productos:
 
 ![demo.png](./ai_in_food/reports/figures/general_figures/demo.PNG)
-
 
 2. El código correspondiente para la creación del modelo.
 
 ![code.png](./ai_in_food/reports/figures/general_figures/code.PNG)
-
 
 3. Algunos resultados que se han obtenido a lo largo del proyecto. 
 
@@ -28,6 +25,3 @@ Favor de abrir la carpeta `ai_in_food` para ver el contenido.
 
 3.3 Proporción de similitud entre productos por bins de score. 
 ![demo.png](./ai_in_food/reports/figures/proportion_of_similarity.png)
-
-
-
