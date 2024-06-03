@@ -1,6 +1,4 @@
-from src.demo.app_utils import(
-    gradio_init
-)
+from src.demo.app_utils import gradio_init
 
 
 if __name__ == "__main__":

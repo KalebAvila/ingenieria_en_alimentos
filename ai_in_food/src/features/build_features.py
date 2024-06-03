@@ -8,9 +8,10 @@ from src.features.feature_utils import (
     REGEX_PATTERN,
     RANDOM_SEED,
 )
-
-from src.features.feature_information import categs_dict, flavor_df_columns_defined
-
+from src.features.feature_information import (
+    categs_dict,
+    flavor_df_columns_defined
+)
 from src.data.utils import (
     get_general_path,
     join_paths,
