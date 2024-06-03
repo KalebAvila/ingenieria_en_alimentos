@@ -258,18 +258,31 @@ def compute_flavor_entity_reduction(
     return reductions, transformers
 
 
-def get_features_vector(ingredient_list):
+def get_entity_features():
     general_path = get_general_path()
     interim_path = join_paths(general_path, INTERIM_DATA_PATH)
     enf_path = join_paths(interim_path, ENTITY_NUTRITION_FACTS_PATH)
     efp_path = join_paths(interim_path, ENTITY_FLAVOR_PROFILE_PATH)
     efg_path = join_paths(interim_path, ENTITY_FUNCTIONAL_GROUP_PATH)
     efm_path = join_paths(interim_path, ENTITY_FLAVOR_MOLECULES_PATH)
-
     efm = read_pickle_with_pandas(efm_path)
     efp = read_pickle_with_pandas(efp_path)
     efg = read_pickle_with_pandas(efg_path)
     enf = read_pickle_with_pandas(enf_path)
+    return efm, efp, efg, enf
+
+
+def get_features_vector(ingredient_list):
+    efm, efp, efg, enf = get_entity_features()
+    return pd.concat([
+        efm.loc[ingredient_list].mean(),
+        efp.loc[ingredient_list].mean(),
+        efg.loc[ingredient_list].mean(),
+        enf.loc[ingredient_list].mean()
+    ])
+
+
+def get_features_vector_wo_download(ingredient_list, efm, efp, efg, enf):
     return pd.concat([
         efm.loc[ingredient_list].mean(),
         efp.loc[ingredient_list].mean(),
