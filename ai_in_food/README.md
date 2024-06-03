@@ -29,51 +29,53 @@ Importante: Para la ejecución total del flujo se requiere una API key de Edamam
 
 Organización del proyecto:
 ------------
-    ├── README.md            <- The top-level README for developers using this project.
+    ├── README.md             <- The top-level README for developers using this project.
     ├── data
-    │   ├── interim          <- Intermediate data that has been transformed.
-    │   ├── processed        <- The final, canonical data sets for modeling.
-    │   └── raw              <- The original, immutable data dump.
+    │   ├── interim           <- Intermediate data that has been transformed.
+    │   ├── processed         <- The final, canonical data sets for modeling.
+    │   └── raw               <- The original, immutable data dump.
     │
-    ├── models               <- Trained and serialized models, model predictions, or model summaries
+    ├── models                <- Trained and serialized models, model predictions, or model summaries
     │
-    ├── notebooks            <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                           the creator's initials, and a short `-` delimited description, e.g.
-    │                           `1-DHM-initial_data_exploration`.
+    ├── notebooks             <- Jupyter notebooks. Naming convention is a number (for ordering),
+    │                            the creator's initials, and a short `-` delimited description, e.g.
+    │                            `1-DHM-initial_data_exploration`.
     │
-    ├── notebooks_discovery  <- Additional Jupyter notebooks that helped to develop the branch.
+    ├── notebooks_discovery   <- Additional Jupyter notebooks that helped to develop the branch.
     │
-    ├── references           <- Data references to the project, manuals, and all other explanatory materials.
+    ├── references            <- Data references to the project, manuals, and all other explanatory materials.
     │
-    ├── reports              <- Generated analysis of the model as HTML, PDF, LaTeX, etc.
-    │   └── figures          <- Generated graphics and figures.
+    ├── reports               <- Generated analysis of the model as HTML, PDF, LaTeX, etc.
+    │   └── figures           <- Generated graphics and figures.
     │
-    ├── requirements.txt     <- The requirements file for reproducing the analysis environment.
+    ├── requirements.txt      <- The requirements file for reproducing the analysis environment.
     │
-    ├── setup.py             <- Makes project pip installable (pip install -e .) so src can be imported
+    ├── setup.py              <- Makes project pip installable (pip install -e .) so src can be imported
     │
-    ├── src                  <- Source code for use in this project.
-    │   ├── __init__.py      <- Makes src a Python module
+    ├── src                   <- Source code for use in this project.
+    │   ├── __init__.py       <- Makes src a Python module
     │   │
-    │   ├── data           <- Scripts to download the data.
+    │   ├── data              <- Scripts to download the data.
     │   │
-    │   ├── demo           <- Scripts to execute the demo.
+    │   ├── demo              <- Scripts to execute the demo.
     │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling.
+    │   ├── feature  s        <- Scripts to turn raw data into features for modeling.
     │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │                     predictions.
+    │   ├── genetic_algorithm <- Scripts to execute the genetic algoritm.
     │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
+    │   ├── models            <- Scripts to train models and then use trained models to make
+    │   │                        predictions.
+    │   │
+    │   └── visualization     <- Scripts to create exploratory and results oriented visualizations
     │
     │
-    ├── general_pipeline.py  <- Executable that follows the correct order of scripts to replicate the results. 
+    ├── general_pipeline.py   <- Executable that follows the correct order of scripts to replicate the results. 
     │
-    ├── ReleaseNotes.md  <- Notes that complement information on the file. 
+    ├── ReleaseNotes.md       <- Notes that complement information on the file. 
     │
-    ├── .gitignore         <- Git file to ignore files and documents.
+    ├── .gitignore            <- Git file to ignore files and documents.
     │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+    └── tox.ini               <- tox file with settings for running tox; see tox.readthedocs.io
 
 --------
 
