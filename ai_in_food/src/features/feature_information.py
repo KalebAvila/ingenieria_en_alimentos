@@ -1,4 +1,7 @@
 categs_dict = {
+    # 'Cookies & Biscuits': cookies,
+    # 'Biscuits/Cookies': cookies,
+    # 'Biscuits/Cookies (Shelf Stable)': cookies,
     'Cheese': 'cheese',
     'Cheese - Block': 'cheese',
     'Cheese/Cheese Substitutes': 'cheese',
