@@ -47,12 +47,6 @@ coverage.xml
 *.mo
 *.pot
 
-# Django stuff:
-*.log
-
-# Sphinx documentation
-docs/_build/
-
 # PyBuilder
 target/
 
@@ -66,20 +60,18 @@ target/
 # Pycharm
 .idea
 
-# VS Code
-.vscode/
-
-# Spyder
-.spyproject/
-
 # Jupyter NB Checkpoints
 .ipynb_checkpoints/
 
-# exclude data from source control by default
-#/data/raw/
-#/data/interim/
-#/data/external/
-#/data/processed/
+# exclude data from source control by default, and models as well
+/data/raw/
+/data/interim/
+/data/external/
+/data/processed/
+/models/
+
+/data_discovery_test/
+/data_test/
 
 # Mac OS-specific storage files
 .DS_Store
@@ -90,3 +82,9 @@ target/
 
 # Mypy cache
 .mypy_cache/
+
+# Virtualenvs
+venv/
+
+# Other
+*.gitkeep
