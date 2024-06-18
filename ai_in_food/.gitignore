@@ -70,6 +70,9 @@ target/
 /data/processed/
 /models/
 
+/data_discovery_test/
+/data_test/
+
 # Mac OS-specific storage files
 .DS_Store
 
