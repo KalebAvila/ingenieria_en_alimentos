@@ -20,7 +20,7 @@ def evaluate_metric(y_true, y_pred, metric, metric_name=''):
 
 
 # Plots
-def plot_histogram(y_true, y_pred, fig_name):
+def plot_histogram(y_true, y_pred, fig_name, save=True):
     general_path = get_general_path()
     fig_path = join_paths(general_path, FIGURES_PATH, fig_name)
     steps = 50
@@ -43,10 +43,11 @@ def plot_histogram(y_true, y_pred, fig_name):
     plt.title("Histogram normalized to the probability")
     plt.xlabel("Model Score")
     plt.ylabel("Count normalized to class probability")
-    plt.savefig(fig_path)
+    if save:
+        plt.savefig(fig_path)
 
 
-def plot_proportion_of_similarity_in_bins(y_true, y_pred, fig_name):
+def plot_proportion_of_similarity_in_bins(y_true, y_pred, fig_name, save=True):
     general_path = get_general_path()
     fig_path = join_paths(general_path, FIGURES_PATH, fig_name)
     steps = 25
@@ -72,4 +73,5 @@ def plot_proportion_of_similarity_in_bins(y_true, y_pred, fig_name):
     ax.set_ylabel('Similar proportion of cases')
     ax.legend(loc='upper left', bbox_to_anchor=(0.05, 1.0))
     ax2.legend(loc='upper left', bbox_to_anchor=(0.05, 0.9))
-    plt.savefig(fig_path)
+    if save:
+        plt.savefig(fig_path)

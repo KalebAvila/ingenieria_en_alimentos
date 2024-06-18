@@ -9,7 +9,7 @@ from src.models.model_utils import (
     get_model,
     predict
 )
-from visualization_utils import (
+from src.visualization.visualization_utils import (
     evaluate_metric,
     plot_histogram,
     plot_proportion_of_similarity_in_bins
