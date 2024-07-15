@@ -11,7 +11,7 @@ if __name__ == "__main__":
     results, gen = genetic_algorithm(
         product_to_develop=['Milk'],
         undesired_ingredients=not_ing,
-        generations=10,
+        generations=600,
         verbose=3,
         show_gen_samples_nb=3,
         return_last_available_generation=True

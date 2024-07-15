@@ -275,20 +275,30 @@ def get_entity_features():
 
 def get_features_vector(ingredient_list):
     efm, efp, efg, enf = get_entity_features()
+
+    efm = efm.loc[ingredient_list].sum()
+    efp = efp.loc[ingredient_list].sum()
+    efg = efg.loc[ingredient_list].sum()
+    enf = enf.loc[ingredient_list].sum()
+
     return pd.concat([
-        efm.loc[ingredient_list].mean(),
-        efp.loc[ingredient_list].mean(),
-        efg.loc[ingredient_list].mean(),
-        enf.loc[ingredient_list].mean()
+        efm,
+        efp,
+        efg,
+        enf
     ])
 
-
 def get_features_vector_wo_download(ingredient_list, efm, efp, efg, enf):
+    efm = efm.loc[ingredient_list].sum()
+    efp = efp.loc[ingredient_list].sum()
+    efg = efg.loc[ingredient_list].sum()
+    enf = enf.loc[ingredient_list].sum()
+
     return pd.concat([
-        efm.loc[ingredient_list].mean(),
-        efp.loc[ingredient_list].mean(),
-        efg.loc[ingredient_list].mean(),
-        enf.loc[ingredient_list].mean()
+        efm,
+        efp,
+        efg,
+        enf
     ])
 
 
@@ -318,6 +328,7 @@ def feature_generation():
     all_samples = get_sample_for_categories(
         data_set=usda_ingredients, size=150
     )
+    #all_samples = all_samples.to_frame()
     # entity_nutrition_facts (enf)
     # entity_flavor_profile (efp)
     # entity_functional_group (efg)
@@ -329,6 +340,8 @@ def feature_generation():
         entity_flavor_molecules_name=efm,
     )
     efp_r, efg_r, efm_r = reductions
+
+    #features = features.to_frame()
 
     print("Saving entities for ingredients...")
 
@@ -344,12 +357,17 @@ def feature_generation():
     print(f"Saving entity_flavor_molecules_name at {efm_path}")
     save_as_pickle(what=efm_r, where=efm_path)
     features = all_samples.flavor_ingredients.apply(get_features_vector)
+    print(features.head())
+
 
     print(f'Saving features, at {features_path}')
+    features.to_parquet(features_path)
     save_as_parquet(what=features, where=features_path)
     target = all_samples[['filtered_category']]
 
+
     print(f'Saving target, at {target_path}')
+    target.to_parquet(target_path)
     save_as_parquet(what=target, where=target_path)
 
 

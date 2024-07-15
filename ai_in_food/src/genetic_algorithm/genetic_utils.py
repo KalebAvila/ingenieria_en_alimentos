@@ -10,6 +10,17 @@ from src.features.build_features import (
 )
 from src.models.model_utils import get_model, predict
 
+from src.data.utils import (
+    get_general_path,
+    join_paths,
+    read_data,
+    read_pickle_with_pandas,
+    make_desired_folder,
+    check_if_filepath_exists,
+    save_as_csv,
+)
+
+NEW_PATH = 'data/New_Datasets'
 
 MATING_PROPORTION = 0.9
 
@@ -64,7 +75,7 @@ def genetic_algorithm(
     product_to_develop=[],
     undesired_ingredients=[],
     initial_population_size=100,
-    generations=100,
+    generations=600,
     verbose=1,
     show_gen_samples_nb=20,
     return_last_available_generation=False,
@@ -313,6 +324,8 @@ def genetic_algorithm(
 
 
 def process_results(results):
+    general_path = get_general_path()
+    csv_path = join_paths(general_path, NEW_PATH)
     r = results.copy()
     r.sort_values('prediction', inplace=True)
     max_pred_value = r.prediction.max()
@@ -335,4 +348,8 @@ def process_results(results):
         'ingredient_list': final_result.ingredient_list,
         'model_score': final_result.prediction
     }
+    print(f'Saving target, at {csv_path}')
+    final_result.to_csv('/Users/kalebavila/Documents/ingenieria_en_alimentos/ai_in_food/data/New_Datasets/Resultados_1.csv', index=False)
+    #save_as_csv(what=final_result, where=csv_path)
+
     return resume
